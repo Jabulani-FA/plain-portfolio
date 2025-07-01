@@ -1,0 +1,471 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+main {
+  font-family: "Courier New", Courier, monospace;
+}
+header {
+  border-bottom: 1px solid grey;
+  padding: 20px;
+  position: static;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+    border-bottom: 2px solid rgb(175, 13, 175);
+    transition: .5s ease-in-out;
+}
+
+.montserrat-demo {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.cursive-text {
+  font-family: "Great Vibes", cursive;
+  color: rgba(0, 0, 0);
+}
+header > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 100px;
+}
+header > nav > ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+header > nav > ul, li {
+  list-style: none;
+}
+
+li{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* main {
+  padding: 20px;
+} */
+main > .heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 768px) {
+  main > .heading {
+    width: 100%;
+    display: grid;
+  }
+}
+main > .heading > img {
+  position: relative;
+  height: 400px;
+  object-fit: contain;
+  object-position: top;
+  justify-self: center;
+  border-radius: 50px;
+  margin-right: 50px;
+  z-index: 1;
+}
+main > .heading > img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(128, 128, 128, 0.678, rgba(0, 0, 0, 0.726))
+  );
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  main > .heading > img {
+    object-fit: contain;
+    object-position: top;
+    justify-self: center;
+    border-radius: 20%;
+  }
+}
+.text-bg {
+  width: 50%;
+  padding: 10px;
+}
+.heading {
+  background-image: url("./assets/images/19362653.jpg");
+  background-position: top;
+  background-attachment: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 5%;
+}
+.heading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.76) 25%,
+    rgba(0, 0, 0, 0.541)
+  );
+  z-index: -1;
+}
+.text-bg > h2 {
+  font-size: 50px;
+  margin-bottom: 0;
+  text-align: center;
+}
+.text-bg > div > p {
+  font-size: 24px;
+}
+@media (max-width: 768px) {
+  .text-bg {
+    width: 95%;
+    padding: 10px;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+/* .about{
+} */
+.stacks {
+  /* background: url("./assets/images/textures/dotted-texture.jpg"); */
+  background: url("./assets/images/textures/black_ink_splatter_background.jpg");
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.stacks::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to top, transparent 80%, white);
+  inset: 0;
+  z-index: 1;
+}
+.stacks > h2,
+.projects > h2 {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
+.stacks > .stack-image {
+  display: flex;
+  padding-top: 50px;
+  /* gap: 50px; */
+  justify-content: space-evenly;
+}
+@media (max-width: 768px) {
+  .stacks > .stack-image {
+    display: flex;
+    flex-direction: column;
+    /* gap: 50px; */
+    justify-content: space-evenly;
+  }
+  .stacks::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to top, transparent 93%, white);
+    inset: 0;
+    z-index: 1;
+  }
+}
+.stacks > .stack-image > div > img {
+  width: 80px;
+  height: 80px; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.stacks > .stack-image > div {
+  text-align: center;
+}
+
+.stacks > .stack-image > div:nth-child(2n + 2) {
+  margin-top: 100px;
+  img {
+    animation: rotate 3s infinite;
+  }
+  @media (max-width: 768px) {
+    margin-top: 0px;
+    margin-left: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .stacks > .stack-image > div:nth-child(3n + 4) {
+    margin-top: 0px;
+    margin-left: -200px;
+  }
+}
+.stacks > .stack-image > div:nth-child(2n + 1) {
+  img {
+    animation: float 3s infinite;
+  }
+}
+@keyframes float {
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-45deg);
+  }
+  66% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.footer {
+  background: url("./assets/images/textures/67269.jpg");
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @media (max-width: 768px) {
+    padding-top: 0px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 100px;
+  }
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, white 2%, transparent);
+  @media (max-width: 768px) {
+    background: linear-gradient(to bottom, white 1%, transparent);
+  }
+}
+.footer .logo-area > img{
+    width: 200px;
+}
+.footer .socials{
+    margin-top: 30px;
+    text-align: start;
+}
+.footer > div > ul{
+    justify-content: start;
+}
+.footer > div > ul > li{
+    font-size: 14px;
+}
+.footer .contact{
+    margin-top: 30px;
+    text-align: start;
+}
+.footer .contact input{
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    color: black;
+    /* outline: none; */
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+.footer .contact input:focus{
+    border-bottom: 1px solid rgb(204, 45, 204);
+    outline: none;
+    transition: .5s ease-in-out;
+}
+.footer > div > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: start;
+}
+.footer > div > ul >li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.projects {
+  /* background: url("/assets/images/textures/black_ink_splatter_background.jpg"); */
+  /* background: url("./assets/images/textures/dotted-texture\ -\ Copy.jpg"); */
+  /* padding-top: 10px; */
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.projects > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  justify-content: center;
+}
+.projects > div > div {
+  background: rgba(255, 255, 255, 0.87);
+  width: 250px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.74);
+}
+.projects > div > div > h1 {
+  margin-bottom: 10px;
+}
+.projects > div > div > img {
+  width: 250px;
+}
+.projects > div > div > h4 {
+  margin-top: 10px;
+}
+.projects > div > div > button {
+  width: 100%;
+  padding: 10px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
+  margin-top: 10px;
+  color: white;
+  background: black;
+  border: none;
+  outline: 1px solid black;
+  border-radius: 2px;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.74);
+  /* display: flex;
+  text-align: center;
+  align-self: end; */
+}
+.projects > div > div:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+/* .projects > div > div > small {
+    margin-top: 0px;
+} */
+#contact {
+  min-height: 400px;
+  background: url("./assets/images/19362653.jpg");
+  background-position: top;
+  background-attachment: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 5%;
+}
+
+.footer-icon{
+    width: 30px;
+}
+.whatsapp{
+    width: 120px;
+}
+/* #contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+} */
+.contact-form{
+    max-width: 450px;
+    min-height: 200px;
+    display: block;
+    padding: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.767);
+    margin-left: auto;
+    margin-right: 150px;
+    @media (max-width: 768px) {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+}
+.contact-form>h1{
+    text-align: center;
+}
+.contact-form>h1,input#name,input#email,textarea#message{
+    margin-bottom: 10px;
+}
+.contact-form > input{
+    width: 95%;
+    display: block;
+    padding: 10px;
+    outline: none;
+    @media (max-width:768px) {
+        width: 90%;
+    }
+}
+.contact-form > textarea{
+    width: 95%;
+    padding: 10px;
+    outline: none;
+    @media (max-width:768px) {
+        width: 90%;
+    }
+}
+
+#contact > form > button {
+    background-color: black;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    color: white;
+    margin-top: 10px;
+    @media (max-width:768px) {
+        width: 98%;
+    }
+}
+.contact > button {
+    background-color: black;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+}
