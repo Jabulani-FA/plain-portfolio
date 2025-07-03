@@ -4,7 +4,7 @@ const path = require("path");
 const nodemailer = require("nodemailer");
 
 const app = http.createServer((req, res) => {
-  if (req.method === "POST" && req.url === "/contact") {
+  if (req.method === "POST" && req.url === "/api/contact") {
     let body = "";
 
     req.on("data", (chunk) => {
