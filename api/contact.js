@@ -36,5 +36,6 @@
 
 document.getElementById('contact-form').addEventListener('submit', async function (e) {
   e.preventDefault();
+  console.log(e)
   alert("Leads here");
 })
