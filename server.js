@@ -2,6 +2,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const app = http.createServer((req, res) => {
   if (req.method === "POST" && req.url === "/api/contact") {
