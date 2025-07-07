@@ -131,12 +131,17 @@
             <div class="socials">
                 <h1>Socials</h1>
                 <ul>
-                    <li><a href="https://www.linkedin.com/in/olorunfemi-akanbi"><img src="./assets/images/icons/Symbol.svg" class="footer-icon" />LinkedIn</a></li>
-                    <li><a href="https://github.com/Jabulani-FA"><img src="./assets/images/icons/Symbol(1).svg" class="footer-icon" />Github</a></li>
-                    <li><a href="https://facebook.com/share/1B866sRa8s/"><img src="./assets/images/icons/Symbol(2).svg" class="footer-icon" /> Facebook</a></li>
-                    <li><a href="https://www.instagram.com/5_knobs"><img src="./assets/images/icons/Symbol(3).svg" class="footer-icon" /><img
-                            src="./assets/images/icons/Logo.svg" class="whatsapp" /></a></li>
-                    <li><a href="https://x.com/Olorun_Femi04"><img src="./assets/images/icons/idJxGuURW1_logos.svg" class="footer-icon" />X</a></li>
+                    <li><a href="https://www.linkedin.com/in/olorunfemi-akanbi"><img
+                                src="./assets/images/icons/Symbol.svg" class="footer-icon" />LinkedIn</a></li>
+                    <li><a href="https://github.com/Jabulani-FA"><img src="./assets/images/icons/Symbol(1).svg"
+                                class="footer-icon" />Github</a></li>
+                    <li><a href="https://facebook.com/share/1B866sRa8s/"><img src="./assets/images/icons/Symbol(2).svg"
+                                class="footer-icon" /> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/5_knobs"><img src="./assets/images/icons/Symbol(3).svg"
+                                class="footer-icon" /><img src="./assets/images/icons/Logo.svg" class="whatsapp" /></a>
+                    </li>
+                    <li><a href="https://x.com/Olorun_Femi04"><img src="./assets/images/icons/idJxGuURW1_logos.svg"
+                                class="footer-icon" />X</a></li>
                 </ul>
             </div>
             <div class="contact">
@@ -175,7 +180,41 @@
             _waEmbed(wa_btnSetting);
         };
     </script>
-    <script src="./api/contact.js"></script>
+    <script>
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+            };
+
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                const data = await res.json();
+
+                if (res.ok) {
+                    alert('Message sent successfully!');
+                    form.reset();
+                } else {
+                    alert('Error: ' + (data.message || 'Something went wrong'));
+                }
+            } catch (error) {
+                alert('Network Error: ' + error.message);
+            }
+        });
+    </script>
+
+    <!-- <script src="./api/contact.js"></script> -->
 
 </body>
 
