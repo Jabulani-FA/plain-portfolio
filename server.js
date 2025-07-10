@@ -64,8 +64,8 @@ const app = http.createServer((req, res) => {
         </div>
       `;
 
-      const transporter = require("nodemailer").createTransport({
-        service: "Gmail",
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
         auth: {
           user: "akanbi398@gmail.com",
           pass: process.env.APP_PASS,
